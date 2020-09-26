@@ -36,6 +36,10 @@
         <label for="password">비밀번호</label>
         <input type="password" id="password" name="password"/>
     </p>
+    <p>
+        <label for="remember-me">Remember-me(로그인 상태 유지)</label>
+        <input type="checkbox" id="remember-me" name="remember-me"/>
+    </p>
     <%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <button type="submit" class="btn">로그인</button>
