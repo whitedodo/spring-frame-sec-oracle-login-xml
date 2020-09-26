@@ -2,7 +2,7 @@
 Spring Framework 5 MVC, Spring Security 5.4, Oracle 기반의 로그인 프로젝트(XML 방식)
 
 ### 기본 정보(Information)
-##### 제작일자(Create date): 2020-09-25
+##### 제작일자(Create date): 2020-09-26
 ##### 작성언어(Write language): Java
 ##### IDE: Eclipse IDE with Spring Tool Suite 4-4.7.2.
 ##### 제작자(Author): 도도(Dodo) / rabbit.white at daum dot net
@@ -29,6 +29,7 @@ Spring Framework 5 MVC, Spring Security 5.4, Oracle 기반의 로그인 프로�
 ##### (Encryption (Bcrypt), logins, permissions per page, error page and access, and tasks for automatic login maintain technology.)
 
 ### 2. 시연(Demonstration)
+##### 1. SpringFramework(스프링 프레임워크), Spring Security 5.4 - 로그인 프로젝트, https://youtu.be/xXKRY-c7kV0, Accessed by 2020-09-26, Last Modified 2020-09-26.
 
 ### 3. 참고자료(Reference)
 ##### 1. Maven Repository: Search/Browse/Explore, https://mvnrepository.com/, Accessed by 2020-09-26, Last Modified .
