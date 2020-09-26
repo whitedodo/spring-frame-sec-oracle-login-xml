@@ -30,13 +30,20 @@
 		<!-- Form-login의 항목 -->
 			<!-- Default-Target-URL: 로그인 성공할 경우, 접속할 사이트 -->
 		
-		<logout logout-url="/logout" logout-success-url="/" />
+		
+		<!-- 쿠키 제거 기능 개선 -->
+		<logout logout-url="/logout" logout-success-url="/"
+			invalidate-session="true" delete-cookies="remember-me,JSESSION_ID" />
 		
 		<!-- Servlet 3.0부터 access-denied-handler 미지원 -->
 		<!-- web.xml으로 제어할 것 -->
 		<!-- <access-denied-handler ref="customAccessDeniedHandler"/> -->
 		<access-denied-handler error-page="/member/accessDenied" />
 		<csrf disabled="true" />
+		
+		<!-- 자동 로그인(2020-09-26 // 추가 작업 -->
+		<remember-me data-source-ref="dataSource" token-validity-seconds="604800" />
+		
 	</http>
 	
 	<!-- DataSource 추후 지원 -->
@@ -52,7 +59,7 @@
 	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
-		<beans:property name="username" value="{사용자계정}" />
+		<beans:property name="username" value="{사용자계정명}" />
 		<beans:property name="password" value="{비밀번호}" />
 	</beans:bean>
 	
@@ -62,8 +69,8 @@
 		<beans:property name="usersByUsernameQuery" value="select username,password,enabled from comp_users where username = ?" />
 		<beans:property name="authoritiesByUsernameQuery" value="select username,authority from comp_authorities where username = ?" />
 		<beans:property name="groupAuthoritiesByUsernameQuery" value="select g.id, g.group_name, ga.authority from comp_groups g, 
-																	  comp_group_members gm, comp_group_authorities ga where gm.username = ? 
-																	  and g.id = ga.group_id and g.id = gm.group_id" />
+									      comp_group_members gm, comp_group_authorities ga where gm.username = ? 
+									      and g.id = ga.group_id and g.id = gm.group_id" />
 	</beans:bean>
 	
 	<!-- provider -->
