@@ -35,6 +35,13 @@ CREATE TABLE comp_group_members(
 	username VARCHAR2(20) NOT NULL
 );
 
+CREATE TABLE persistent_logins (
+	username VARCHAR(64) NOT NULL,
+	series VARCHAR(64) PRIMARY KEY,
+	token VARCHAR(64) NOT NULL,
+	last_used TIMESTAMP NOT NULL
+);
+
 -- 그룹
 INSERT INTO comp_groups (id, group_name) VALUES ('G01', '관리자 그룹');
 INSERT INTO comp_groups (id, group_name) VALUES ('G02', '사용자 그룹');
