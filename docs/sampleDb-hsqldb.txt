@@ -1,0 +1,49 @@
+CREATE TABLE comp_users (
+	username VARCHAR(50) NOT NULL,
+	password VARCHAR(300) NOT NULL,
+	enabled TINYINT NOT NULL,
+	PRIMARY KEY (username)
+);
+
+INSERT INTO comp_users (username, password, enabled) VALUES
+	('user', '$2a$10$x04djNV2e9rpcPPRyXoLk.rMm6iZe2/vYdzpqHQcLeNSYdt7kc30O', 1),
+	('admin', '$2a$10$QUddY3O/6ZgkYCR6MFlv9.nqA501Fm0cc/ZxQHX5pwb1o0CYCTiIS', 1);
+
+CREATE TABLE comp_authorities (
+  username VARCHAR(50) NOT NULL,
+  authority VARCHAR(50) NOT NULL,
+  CONSTRAINT fk_authorities_users FOREIGN KEY (username) REFERENCES comp_users (username)
+); 
+
+INSERT INTO comp_authorities (username, authority) VALUES
+	('user', 'ROLE_ADMIN'),
+	('admin', 'ROLE_USER');
+
+
+CREATE TABLE comp_groups(
+	id VARCHAR2(20) NOT NULL,
+	group_name VARCHAR2(20) NULL
+);
+
+CREATE TABLE comp_group_authorities(
+	group_id VARCHAR2(20) NOT NULL,
+	authority VARCHAR2(20) NOT NULL
+);
+
+CREATE TABLE comp_group_members(
+	group_id VARCHAR2(20) NOT NULL,
+	username VARCHAR2(20) NOT NULL
+);
+
+-- 그룹
+INSERT INTO comp_groups (id, group_name) VALUES ('G01', '관리자 그룹');
+INSERT INTO comp_groups (id, group_name) VALUES ('G02', '사용자 그룹');
+
+-- 그룹 권한
+INSERT INTO comp_group_authorities (group_id, authority) VALUES ('G01', 'ROLE_ADMIN');
+INSERT INTO comp_group_authorities (group_id, authority) VALUES ('G01', 'ROLE_USER');
+INSERT INTO comp_group_authorities (group_id, authority) VALUES ('G02', 'ROLE_USER');
+
+-- 그룹 회원
+INSERT INTO comp_group_members (group_id, username) VALUES ('G01', 'user');
+INSERT INTO comp_group_members (group_id, username) VALUES ('G02', 'admin');
