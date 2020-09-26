@@ -12,14 +12,13 @@ Spring Framework 5 MVC, Spring Security 5.4, Oracle 기반의 로그인 프로�
 ##### (소프트웨어 프로젝트 관리 및 이해 도구)
 ##### 2. javax.servlet-api (4.0.1) - https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
 ##### 3. web.xml 규격 변경(servlet 2.5 -> servlet3.5로)
-##### 4. spring-security-taglibs(5.4)
-##### 5. spring-security-config(5.4)
-##### 6. spring-security-web(5.4)
-##### 7. spring-security-core(5.4)
-##### 8. javax.servlet-api(4.0.1)
-##### 9. spring-webmvc(5.2.9.RELEASE)
-##### 10. spring-context(5.2.9.RELEASE)
-##### 11. Maven 3.6.3/1.16.0.20200610-1735
+##### 4. spring-security-taglibs(5.4) - https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs
+##### 5. spring-security-config(5.4) - https://mvnrepository.com/artifact/org.springframework.security/spring-security-config
+##### 6. spring-security-web(5.4) - https://mvnrepository.com/artifact/org.springframework.security/spring-security-web
+##### 7. spring-security-core(5.4) - https://mvnrepository.com/artifact/org.springframework.security/spring-security-core
+##### 8. spring-webmvc(5.2.9.RELEASE) - 
+##### 9. spring-context(5.2.9.RELEASE)
+##### 10. Maven 3.6.3/1.16.0.20200610-1735
 ##### 자바 버전(Java-Version): OpenJDK-14.0.2 (https://openjdk.java.net/)
 
 ### 1. 소개(Description)
@@ -36,4 +35,4 @@ Spring Framework 5 MVC, Spring Security 5.4, Oracle 기반의 로그인 프로�
 ##### 2. Maven - Welcome to Apache Maven, https://maven.apache.org/, Accessed by 2020-09-26, Last Modified .
 ##### 3. Spring | Tools, https://spring.io/tools, Accessed by 2020-09-26, Last Modified .
 ##### 4. OpenJDK, https://openjdk.java.net/, Accessed by 2020-09-26, Last Modified .
-##### 5. 
+##### 5. Spring Security, https://spring.io/projects/spring-security, Accessed by 2020-09-26, Last Modified.
