@@ -26,6 +26,14 @@ CREATE TABLE comp_group_members(
 	username VARCHAR2(20) NOT NULL
 );
 
+CREATE TABLE persistent_logins (
+	
+	username VARCHAR(64) NOT NULL,
+	series VARCHAR(64) PRIMARY KEY,
+	token VARCHAR(64) NOT NULL,
+	last_used TIMESTAMP NOT NULL
+);
+
 
 -- 계정
 INSERT INTO comp_users (username, password, enabled) VALUES ('user', '$2a$10$x04djNV2e9rpcPPRyXoLk.rMm6iZe2/vYdzpqHQcLeNSYdt7kc30O', 1);
